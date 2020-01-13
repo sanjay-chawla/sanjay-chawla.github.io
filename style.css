@@ -154,16 +154,12 @@ p > a {
 }
 
 
-.navbar-brand:before, .navbar-header:before, .navbar-toggle:before,
-	#collapseWrapper:before, .navbar-collapse:before, a:before {
-	vertical-align: middle !important;
-	margin: 0;
-}
 
 .navbar-brand {
   margin-top: 5px;
 	width: 50vw;
 	font-size: 150%;
+	white-space: nowrap;
 }
 
 .navbar-default {
