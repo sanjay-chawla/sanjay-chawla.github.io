@@ -7,7 +7,6 @@ body {
 }
 
 a:link, a:visited {
-	display: block;
 	color: black !important;
 	text-align: center;
 	text-decoration: none;
@@ -45,8 +44,8 @@ a:hover, a:active {
 	margin: 0 !important;
 }
 
-a {
-	font-family: 'Special Elite', cursive;
+nav a {
+	font-family: 'Ubuntu', sans-serif;
 	font-weight: 600;
 }
 
@@ -60,18 +59,17 @@ img {
 	max-height: 100%;
 }
 
-h3 {
-	font-family: 'Special Elite', cursive;
+h3, h5 {
+	font-family: 'Ubuntu', sans-serif;
 }
 
 input, p, textarea {
-	font-family: 'Special Elite', cursive;
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 17px;
-	line-height: 200%;
   font-weight: 500;
 }
 p > a {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Ubuntu', sans-serif;
 	font-size: 17px;
 	line-height: 200%;
 }
@@ -128,10 +126,19 @@ p > a {
 	#about {
 		text-align: center;
 	}
-	.coverScreen {
-		height: 100vh !important;
-		max-height: 100vh !important;
+  nav a {
+    display: block;
+  }
+  .navbar-collapse {
+    transition: height 0.4s ease-in;
 	}
+  .navbar-collapse.collapsing, .navbar-collapse.show {
+    border-top: 2px solid #000;
+	}
+	.navbar-nav {
+		height: 100vh;
+	}
+  
 }
 
 .navbar-nav a:link, .navbar-nav a:visited {
@@ -141,42 +148,28 @@ p > a {
 .navbar {
   background-color: white;
 	margin: 0 !important;
-	border-bottom-width: 2px;
-	border-bottom-color: #000000;
-	 
+	border-bottom-width: 2px !important;
+	border-bottom-color: #000000 !important;	
 }
 
 .navbar-footer {
 	background-color: white;
 	margin: 0 !important;
-	border: 0 !important;
-	 
+	border: 0 !important; 
 }
-
-
 
 .navbar-brand {
   margin-top: 5px;
 	width: 50vw;
 	font-size: 150%;
-	white-space: nowrap;
 }
 
-.navbar-default {
+.navbar {
 	border-color: #000000;
 }
 
-.navbar-default .navbar-toggle {
+.navbar-toggler {
 	border-color: #000000;
-}
-
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus
-	{
-	background-color: #000000;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-	background-color: #000000;
 }
 
 .navbar-collapse {
@@ -185,38 +178,55 @@ p > a {
 }
 
 @media only screen and (max-width: 768px) {
-	.navbar-collapse.collapsing {
-		transition: all 0.2s !important;
-	}
-	.navbar-toggle {
+ .navbar-toggler {
 		border: none;
-		background: transparent !important;
-	}
-	.navbar-toggle:hover {
-		background: transparent !important;
-	}
-	.navbar-toggle .icon-bar {
-		width: 22px;
-		transition: all 0.2s;
-	}
-	.navbar-toggle .top-bar {
-		transform: rotate(45deg);
-		transform-origin: 10% 10%;
-	}
-	.navbar-toggle .middle-bar {
-		opacity: 0;
-	}
-	.navbar-toggle .bottom-bar {
-		transform: rotate(-45deg);
-		transform-origin: 10% 90%;
-	}
-	.navbar-toggle.collapsed .top-bar {
-		transform: rotate(0);
-	}
-	.navbar-toggle.collapsed .middle-bar {
-		opacity: 1;
-	}
-	.navbar-toggle.collapsed .bottom-bar {
-		transform: rotate(0);
-	}
+	}  
+  
+  .navbar {
+		padding: 0 5% !important;
+	}   
+  
+  .top-bar, .bottom-bar, .middle-bar {
+    stroke-dashoffset: 0;
+  }
+  .diag-1-bar, .diag-2-bar {
+    stroke-dashoffset: 450;
+  }
+  .bar {
+    stroke-dasharray: 450;
+  }
+  .navbar-toggler * {
+  stroke-dashoffset: 0;
+  transition: all 4s linear;
+}
+.navbar-toggler:not(.collapsed) * {
+  stroke-dashoffset: 450;
+  transition: all 2s -1.75s linear;
+}
+  .navbar-toggler .middle-bar {
+  stroke-dashoffset: 0;
+  transition: all 4s linear;
+}
+.navbar-toggler:not(.collapsed) .middle-bar {
+  stroke-dashoffset: 450;
+  transition: all 1s -1.9s linear;
+}
+
+.navbar-toggler:not(.collapsed) .diag-1-bar {
+  stroke-dashoffset: 0;
+  transition: all 4s linear;
+}
+.navbar-toggler:not(.collapsed) .diag-2-bar {
+  stroke-dashoffset: 0;
+  transition: all 4s linear;
+}
+.navbar-toggler .diag-1-bar {
+  stroke-dashoffset: 450;
+  transition: all 4s -3.5s linear;
+}
+.navbar-toggler .diag-2-bar {
+  stroke-dashoffset: 450;
+  transition: all 4s -3.5s linear;
+}
+}
 }
