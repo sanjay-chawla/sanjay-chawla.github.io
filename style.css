@@ -6,6 +6,12 @@ body {
   color: #000000;
 }
 
+#portfolio .container-fluid {
+	border-bottom: 2px solid #000;
+}
+#portfolio h3 {
+	padding-top: 2%;
+}
 a:link, a:visited {
 	color: black !important;
 	text-align: center;
@@ -59,7 +65,7 @@ img {
 	max-height: 100%;
 }
 
-h3, h5 {
+h3, h4, h5 {
 	font-family: 'Ubuntu', sans-serif;
 }
 
@@ -73,10 +79,13 @@ p > a {
 	font-size: 17px;
 	line-height: 200%;
 }
+#info p, #info h3, #info h4, #info h5 {
+	display: inline;
+}
 /*Common*/
 #about, #portfolio, #contact {
-	margin: 50px 0 0 0;
-	padding: 0 10% 50px 10%;
+	/*margin: 50px 0 0 0;*/
+	padding: 50px 10% 50px 10%;
 	border-bottom: 2px solid #000000;
 	/*height:100vh;*/
 }
